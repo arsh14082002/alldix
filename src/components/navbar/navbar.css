@@ -1,0 +1,97 @@
+/* Base styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+  background-color: #242424; /* Adjust background color */
+  color: #fff; /* Adjust text color */
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem; /* Adjust font size */
+  position: fixed; /* Fix the navbar to the top */
+  top: 0;
+  width: 100%;
+  z-index: 10; /* Ensure navbar stays on top */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.navbar.active {
+  background-color: #df2121; /* Adjust background color on active */
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-container > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-logo {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.nav-icon {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* font-size: 1.5rem; */
+  gap: 1rem;
+}
+
+.nav-links {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.nav-links:hover {
+  color: rgb(38, 107, 130);
+}
+
+/* Navigation Menu (Responsive Styles) */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #242424; /* Adjust background color */
+    padding: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .nav-icon {
+    display: block;
+  }
+}
